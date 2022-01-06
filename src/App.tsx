@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import LastThing from './Components/Pages/last-thing';
+import YourCar from './Components/Pages/your-car';
+import YourDeductibles from './Components/Pages/your-deductibles';
+import YourJob from './Components/Pages/your-job';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <YourCar></YourCar>
+      {/* <YourJob></YourJob>
+      <LastThing></LastThing>
+      <YourDeductibles></YourDeductibles> */}
     </div>
   );
 }

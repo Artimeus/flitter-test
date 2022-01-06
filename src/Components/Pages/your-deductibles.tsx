@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Organisms/header';
+import Header from '../organisms/header';
 
 function YourDeductibles(){
     return(

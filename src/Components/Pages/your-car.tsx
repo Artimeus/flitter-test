@@ -27,7 +27,9 @@ function YourCar(){
     return(
         <>
             <Header></Header>
-            <Button disabled><SearchIcon></SearchIcon>Rechercher par immatriculation</Button>
+            <div className='immatriculation-search'>
+                <Button disabled><SearchIcon></SearchIcon>Rechercher par immatriculation</Button>
+            </div>
             <h1>Votre voiture</h1>
             <div>
                 <Autocomplete

@@ -8,9 +8,9 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 function Header() {
     return (
-        <div>
+        <div className='header'>
             <Button><KeyboardBackspaceIcon/>Retour</Button>
-            <div>
+            <div className='steps'>
                 <Step stepTitle='voiture'></Step>
                 <Step stepTitle='infos'></Step>
                 <Step stepTitle='usage'></Step>

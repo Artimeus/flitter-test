@@ -1,0 +1,18 @@
+@use '../molecules/step';
+
+.header {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 1px solid pink;
+
+    .steps {
+        display: inline-flex;
+        justify-content: space-between;
+
+        .step {
+            margin-inline: 5px;
+        }
+    }
+}

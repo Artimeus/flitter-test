@@ -13,7 +13,7 @@ import BrandButton from '../molecules/brand-button';
 
 function SelectCarBrandButtons() {
     return (
-        <div>
+        <div className='select-brand-area'>
             <BrandButton brand="PEUGEOT"></BrandButton>
             <BrandButton brand="RENAULT"></BrandButton>
             <BrandButton brand="CITROEN"></BrandButton>

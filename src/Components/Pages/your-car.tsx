@@ -1,9 +1,10 @@
-import { Autocomplete, TextField } from '@mui/material';
+import { Autocomplete, Button, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../Store/store';
 import Header from '../organisms/header';
 import SelectCarBrandButtons from '../organisms/select-car-brand-buttons';
+import SearchIcon from '@mui/icons-material/Search';
 import allActions from '../../Store/Actions';
 
 
@@ -26,14 +27,18 @@ function YourCar(){
     return(
         <>
             <Header></Header>
+            <Button disabled><SearchIcon></SearchIcon>Rechercher par immatriculation</Button>
+            <h1>Votre voiture</h1>
             <div>
                 <Autocomplete
                     disablePortal
                     id="combo-box-demo"
                     options={brandNames}
                     sx={{ width: 300 }}
-                    renderInput={(params) => <TextField {...params} label="Marque ou modèle" />}
+                    renderInput={(params) => <TextField {...params} label="Marque ou modèle" 
+                    />}
                 />
+                <p>Cliquez sur le logo de votre marque ou tapez-la dans la barre de recherche</p>
             </div>
 
             <SelectCarBrandButtons></SelectCarBrandButtons>

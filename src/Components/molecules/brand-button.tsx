@@ -1,8 +1,19 @@
+import { Button } from '@mui/material';
 import React from 'react';
+import lul from './Green check.png';
 
-function BrandButton(){
+
+interface BrandButtonInterface {
+    brand: string,
+}
+function BrandButton(props: BrandButtonInterface) {
+    
+    const imageUrl = require(`../../assets/brands/${props.brand}.png`);
+
     return (
-        <button>Marque</button>
+        <Button>
+            <img src={imageUrl} width="125px" height="125px" alt={props.brand}/>
+        </Button>
     );
 }
 

@@ -12,7 +12,7 @@ import BrandButton from '../molecules/brand-button';
 // import Renault from '../../assets/brands/RENAULT.png';
 
 interface SelectCarBrandButtonsInterface {
-    handleClick: (event: any) => void,
+    handleClick: (event: string) => void,
 }
 
 function SelectCarBrandButtons(props: SelectCarBrandButtonsInterface) {

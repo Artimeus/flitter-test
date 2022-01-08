@@ -10,7 +10,7 @@ const CarBrandsManagement = (state = initialState, action: Action) => {
     switch (action.type){
         case ('ADD_CAR_BRAND'): {
             if (!state.brandNames.includes(action.payload.name)){         
-                let nextState = {
+                const nextState = {
                     ...state,
                     cars: [...state.cars.concat(action.payload)],
                     brandNames: [...state.brandNames.concat(action.payload.name)]

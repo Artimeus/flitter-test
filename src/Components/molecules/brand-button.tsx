@@ -4,10 +4,11 @@ import React from 'react';
 
 interface BrandButtonInterface {
     brand: string,
-    handleClick: (event: any) => void,
+    handleClick: (event: string) => void,
 }
 function BrandButton(props: BrandButtonInterface) {
     
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const imageUrl = require(`../../assets/brands/${props.brand}.png`);
 
     return (

@@ -1,8 +1,7 @@
 import { Autocomplete, Button, TextField } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../Store/store';
-import Header from '../organisms/header';
 import SelectCarBrandButtons from '../organisms/select-car-brand-buttons';
 import SearchIcon from '@mui/icons-material/Search';
 import allActions from '../../Store/Actions';
@@ -39,7 +38,7 @@ function YourCar(){
     }
 
     function getPersonalCarData(brand: string){
-        let brandId = brands.find(x => x.name == brand)?.id;
+        const brandId = brands.find(x => x.name == brand)?.id;
 
         fetch(`https://test-api-7qyau6jusq-oa.a.run.app/api/v1/car/model/${brandId}`)
         .then(result => {

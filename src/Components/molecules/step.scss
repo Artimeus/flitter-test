@@ -1,7 +1,21 @@
+@use '../../fonts';
+
 .step {
-    .css-eglki6-MuiLinearProgress-root {
+    .MuiLinearProgress-root {
         height: 8px;
         width: 180px;
-        background-color: red;
+        background-color: fonts.$G50;
+        border-radius: 32px;
+        
+        flex: none;
+        order: 1;
+        align-self: stretch;
+        flex-grow: 0;
+        margin: 4px 0px;
+    }
+
+    .MuiLinearProgress-bar {
+        background-color: fonts.$G900;
+        border-radius: 8px;
     }
 }

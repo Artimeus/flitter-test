@@ -1,11 +1,17 @@
 @use '../molecules/step';
+@use '../../fonts';
 
 .header {
-    display: inline-flex;
-    justify-content: space-between;
     width: 100%;
-    padding-bottom: 5px;
-    border-bottom: 1px solid pink;
+    padding-bottom: 21px;
+    margin-bottom: 30px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+
+    .go-to-previous-step {
+        position: absolute;
+        left: 100px;
+        top: 30px;
+    }
 
     .steps {
         display: inline-flex;
@@ -14,5 +20,11 @@
         .step {
             margin-inline: 5px;
         }
+    }
+
+    .logo {
+        position: absolute;
+        right: 100px;
+        top: 30px;
     }
 }

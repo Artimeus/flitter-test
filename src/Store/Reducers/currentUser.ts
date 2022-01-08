@@ -1,27 +1,32 @@
-import Action from "../../Interfaces/CarAction";
-import UserAction from "../../Interfaces/CarAction";
-
 const initialState: any = {
-    user: "",
-    // loggedIn: false
+    carModel: "",
+    profession: ""
 }
 
-const currentUser = (state = initialState, action: UserAction) => {
+const currentUser = (state = initialState, action: any) => {
     switch(action.type){
-        case "SET_USER":
-            return {
-                ...state,
-                user: action.payload,
-                loggedIn: true
+        case "SET_CAR_MODEL":{
+            if (action.payload !== "") {
+                return {
+                    ...state,
+                    carModel: action.payload,
+                }
             }
-        case "LOG_OUT":
-            return {
-                ...state,
-                user: "",
-                loggedIn: false
+            else return state;
+        }
+
+        case "SET_PROFESSION":
+        { 
+            if(action.payload != "") {
+                return {
+                    ...state,
+                    profession: action.payload,
+                }
             }
+            else return state;
+        }
         default:
-            return state
+            return state;
     }
 }
 

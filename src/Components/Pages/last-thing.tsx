@@ -4,7 +4,6 @@ import Header from '../organisms/header';
 function LastThing(){
     return(
         <>
-            <Header></Header>
             <div>
                 <p>Last Thing</p>
             </div>

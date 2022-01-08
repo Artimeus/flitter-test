@@ -11,18 +11,22 @@ import BrandButton from '../molecules/brand-button';
 // import Renault from '../../assets/brands/RENAULT.png';
 // import Renault from '../../assets/brands/RENAULT.png';
 
-function SelectCarBrandButtons() {
+interface SelectCarBrandButtonsInterface {
+    handleClick: (event: any) => void,
+}
+
+function SelectCarBrandButtons(props: SelectCarBrandButtonsInterface) {
     return (
         <div className='select-brand-area'>
-            <BrandButton brand="PEUGEOT"></BrandButton>
-            <BrandButton brand="RENAULT"></BrandButton>
-            <BrandButton brand="CITROEN"></BrandButton>
-            <BrandButton brand="VOLKSWAGEN"></BrandButton>
-            <BrandButton brand="DACIA"></BrandButton>
-            <BrandButton brand="TOYOTA"></BrandButton>
-            <BrandButton brand="MERCEDES"></BrandButton>
-            <BrandButton brand="FORD"></BrandButton>
-            <BrandButton brand="BMW"></BrandButton>
+            <BrandButton brand="PEUGEOT" handleClick={props.handleClick}></BrandButton>
+            <BrandButton brand="RENAULT" handleClick={props.handleClick}></BrandButton>
+            <BrandButton brand="CITROEN" handleClick={props.handleClick}></BrandButton>
+            <BrandButton brand="VOLSKWAGEN" handleClick={props.handleClick}></BrandButton>
+            <BrandButton brand="DACIA" handleClick={props.handleClick}></BrandButton>
+            <BrandButton brand="TOYOTA" handleClick={props.handleClick}></BrandButton>
+            <BrandButton brand="MERCEDES" handleClick={props.handleClick}></BrandButton>
+            <BrandButton brand="FORD" handleClick={props.handleClick}></BrandButton>
+            <BrandButton brand="BMW" handleClick={props.handleClick}></BrandButton>
         </div>
     );
 }

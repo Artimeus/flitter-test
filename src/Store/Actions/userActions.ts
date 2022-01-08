@@ -8,6 +8,22 @@ const setUserName = (userName: string) => {
     }
 }
 
+const setCarModel = (carModel: string) => {
+    return {
+        type: "SET_CAR_MODEL",
+        payload: carModel,
+    }
+}
+
+const setProfession = (profession: string) => {
+    return {
+        type: "SET_PROFESSION",
+        payload: profession,
+    }
+}
+
 export default {
     setUserName,
+    setCarModel,
+    setProfession
 }

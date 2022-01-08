@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import allActions from '../../Store/Actions';
 import Header from '../organisms/header';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 function YourJob(){
 
@@ -92,12 +93,12 @@ function YourJob(){
                     
                     {
                         !displayAllProfessions &&
-                        <Button onClick={() => handleDisplayAllProfessions()}>Voir plus de professions</Button>
+                        <Button className='see-more-professions-button' onClick={() => handleDisplayAllProfessions()}>Voir plus de professions<AddCircleIcon></AddCircleIcon></Button>
                     }
 
                 </FormControl>
-                <div>
-                    <Button type='submit'>Suivant</Button>
+                <div className='next-button'>
+                    <Button type='submit' variant="contained" size="large">Suivant</Button>
                 </div>
             </form>
         </div>

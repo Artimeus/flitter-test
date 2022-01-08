@@ -107,3 +107,22 @@ code {
     }
   }
 }
+
+.see-more-professions-button {
+  text-transform: none;
+  color: fonts.$G700 !important;
+  .MuiSvgIcon-root  {
+    margin-left: 5px;
+  }
+}
+
+.next-button {
+  display: flex;
+  .MuiButton-root {
+    background-color: #F45B69;
+    text-transform: capitalize;
+    margin-top: 32px;
+    color: #FFFFFF;
+    position: relative;
+  }
+}

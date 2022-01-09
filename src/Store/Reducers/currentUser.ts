@@ -1,6 +1,9 @@
 const initialState: any = {
     carModel: "",
-    profession: ""
+    profession: "",
+    firstName: "",
+    lastName: "",
+    mail: ""
 }
 
 const currentUser = (state = initialState, action: any) => {
@@ -25,6 +28,14 @@ const currentUser = (state = initialState, action: any) => {
             }
             else return state;
         }
+
+        case "SET_PERSONAL_DATA":
+            return {
+                ...state,
+                firstName: action.payload.firstName,
+                lastName: action.payload.lastName,
+                mail: action.payload.mail
+            }
         default:
             return state;
     }

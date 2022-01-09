@@ -11,7 +11,6 @@ import { RootState } from './Store/store';
 function App() {
 
   const formStep = useSelector((state: RootState) => state.formStepsManagement.formStep);
-  console.log(formStep);
 
   return (
     <div className="App">

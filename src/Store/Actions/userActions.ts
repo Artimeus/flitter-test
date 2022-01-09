@@ -1,10 +1,7 @@
-import Action from "../../Interfaces/CarAction"
-import UserAction from "../../Interfaces/CarAction"
-
-const setUserName = (userName: string) => {
+const setPersonalData = (personalData: {firstName: string, lastName: string, mail: string}) => {
     return {
-        type: "SET_USER",
-        payload: userName,
+        type: "SET_PERSONAL_DATA",
+        payload: personalData,
     }
 }
 
@@ -23,7 +20,7 @@ const setProfession = (profession: string) => {
 }
 
 export default {
-    setUserName,
+    setPersonalData,
     setCarModel,
     setProfession
 }

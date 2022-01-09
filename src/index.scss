@@ -126,3 +126,187 @@ code {
     position: relative;
   }
 }
+
+
+.last-thing {
+  .MuiOutlinedInput {
+  border: 1px solid fonts.$G100;
+  box-sizing: border-box;
+  border-radius: 12px;
+  }
+
+  .form-names {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    .MuiFormControl-root {
+      margin-inline: 0px;
+      width: 282px;
+    }
+  }
+}
+
+.your-deductibles {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  .deductibles-zone {
+    // width: 66%;
+    width: 779px;
+    height: 361px;
+
+    border: 1px solid fonts.$G100;
+    box-sizing: border-box;
+    border-radius: 12px;
+
+    // margin-right: 32px;
+
+    .deductible-text-area {
+      padding-left: 30px;
+      text-align: left;
+
+      .your-deductibles-title {
+        font-family: Circular Std;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+  
+        color: fonts.$G900;
+      }
+    }
+
+    .form-group-buttons {
+      display: flex;
+      flex-direction: column;
+      margin-left: 30px;
+
+      .MuiInputLabel-root  {
+        text-align: left;
+        padding-bottom: 8px;
+        padding-top: 18px;
+
+        font-family: Circular Std;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0em;
+
+        color: fonts.$G600;
+      }
+
+      .MuiButtonBase-root {
+        height: 60px;
+        width: 130px;
+        padding: 14px, 16px, 14px, 16px;
+        margin-right: 8px;
+        
+        border: 2px solid;
+        border-radius: 10px;
+        border-color: #DDDDDE;
+
+        &.Mui-selected {
+          background-color: #F8FAFF;
+          border: 3px solid fonts.$G900;
+        }
+        
+      }
+    }
+
+
+  
+  }
+  .price-zone {
+    // width: 33%;
+    width: 373px;
+    border-radius: 12px;
+    background-color: fonts.$Ivory;
+    text-align: center;
+    padding-bottom: 32px;
+    padding-top: 32px;
+    
+    .your-price-title {
+      font-family: Circular Std;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 32px;
+
+      color: fonts.$G900;
+
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .total-price {
+      display: flex;
+      flex-direction: inline;
+      justify-content: center;
+      margin-bottom: 24px;
+
+      .price {
+        font-family: Circular Std;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 60px;
+      }
+  
+      .per-month {
+        font-family: Circular Std;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 28px;
+        padding-bottom: 10px;
+      }
+    }
+
+    .MuiButton-root {
+      background-color: #F45B69;
+      text-transform: none;
+      margin-top: 32px;
+      color: #FFFFFF;
+      position: relative;
+    }
+  }
+}
+
+.recap-list {
+  background-color: #FFFFFF;
+  border: 1px solid fonts.$G100;
+  width: 309px;
+  border-radius: 8px;
+  margin: 0 auto;
+
+    .separation-bar {
+      margin: 0px 10px;
+      height: 1px;
+      background-color: fonts.$G50;
+      border: none;
+    }
+}
+
+.recap-list-element {
+  display: flex;
+  flex-direction: row;
+  height: 64px;
+
+  .icon {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-inline: 22px;
+  }
+
+  .text {
+    text-align: left;
+    padding-right: 22px;
+    display:flex;
+    align-items:center;
+  }
+}
+

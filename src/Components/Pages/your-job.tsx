@@ -1,8 +1,7 @@
 import { Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material';
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import allActions from '../../Store/Actions';
-import Header from '../organisms/header';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 function YourJob(){
@@ -14,23 +13,48 @@ function YourJob(){
     const dispatch = useDispatch();
 
     const jobs = [
-      "Salarie",
-      "Salarie_cadre",
-      "Etudiant",
-      "Sans_profession",
-      "Fonctionnaire",
-      "Retraite",
-      "Entrepreneur",
-      "Profession_libérale",
-      "Artisans",
-      "Commercant",
-      "Professeur",
-      "Professionel_du_spectacle",
-      "Agriculteur_grande_exploitation",
-      "Vrp"
-    ];
+        "Salarie",
+        "Salarie_cadre",
+        "Etudiant",
+        "Sans_profession",
+        "Fonctionnaire",
+        "Retraite",
+        "Entrepreneur",
+        "Profession_libérale",
+        "Artisans",
+        "Commercant",
+        "Professeur",
+        "Professionel_du_spectacle",
+        "Agriculteur_grande_exploitation",
+        "Vrp"
+      ];
 
     const firstJobs = jobs.slice(0, 4);
+
+
+    // enum jobs {
+    //   Salarie = "Salarié",
+    //   Cadre="Cadre",
+    //   Etudiant="Etudiant",
+    //   Sans_profession="En recherche d'emploi",
+    //   Fonctionnaire="Fonctionnaire",
+    //   Retraite="Retraité",
+    //   Entrepreneur="Entrepreneur",
+    //   Profession_libérale="Profession libérale",
+    //   Artisans="Artisan",
+    //   Commercant="Commerçant",
+    //   Professeur="Professeur",
+    //   Professionel_du_spectacle="Professionel du spectacle",
+    //   Agriculteur_grande_exploitation="Agriculteur grande exploitation",
+    //   Vrp="Vrp"
+    // }
+
+    // for (let motif in jobs) {
+    //     let lul = motif.toString();
+    //     console.log(lul); // ecrit toutes les clés, à gauche dans l'enum
+    //     // console.log(lul)
+    //     console.log(jobs["Sans_profession"]); // écrit "en recherche d'emploi"
+    // }
 
     function handleSubmit(event: any) {
         event.preventDefault();
@@ -38,7 +62,7 @@ function YourJob(){
         dispatch(allActions.formStepsActions.goToNextStep());
     }
 
-    function handleChange(event: any) {
+    function handleChange(event: ChangeEvent<HTMLInputElement>) {
         setSelectedProfession(event.target.value);
     }
 
@@ -50,17 +74,16 @@ function YourJob(){
         <div className='page your-job'>
             <h1 className='title'>Votre profession</h1>
 
-            <form onSubmit={e => handleSubmit(e)}>
+            <form onSubmit={handleSubmit}>
                 
                 <FormControl component="fieldset">
-                {/* <FormLabel component="legend">Gender</FormLabel> */}
   
                     <RadioGroup
                         className='radio-group'
                         aria-label="profession"
                         name="controlled-radio-buttons-group"
                         value={selectedProfession}
-                        onChange={e =>handleChange(e)}
+                        onChange={handleChange}
                     >
                    {
                         !displayAllProfessions && firstJobs.map((job) => {

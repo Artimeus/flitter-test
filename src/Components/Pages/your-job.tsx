@@ -12,49 +12,29 @@ function YourJob(){
 
     const dispatch = useDispatch();
 
-    const jobs = [
-        "Salarie",
-        "Salarie_cadre",
-        "Etudiant",
-        "Sans_profession",
-        "Fonctionnaire",
-        "Retraite",
-        "Entrepreneur",
-        "Profession_libérale",
-        "Artisans",
-        "Commercant",
-        "Professeur",
-        "Professionel_du_spectacle",
-        "Agriculteur_grande_exploitation",
-        "Vrp"
-      ];
+    const jobsMap = new Map<string, string>([
+        ["Salarie", "Salarié"],
+        ["Salarie_cadre", "Cadre"],
+        ["Etudiant", "Etudiant"],
+        ["Sans_profession", "En recherche d'emploi"],
+        ["Fonctionnaire", "Fonctionnaire"],
+        ["Retraite", "Retraité"],
+        ["Entrepreneur", "Entrepreneur"],
+        ["Profession_libérale", "Profession libérale"],
+        ["Artisans", "Artisan"],
+        ["Commercant", "Commerçant"],
+        ["Professeur", "Professeur"],
+        ["Professionel_du_spectacle", "Professionnel du spectacle"],
+        ["Agriculteur_grande_exploitation", "Agriculteur"],
+        ["Vrp", "VRP"]
+    ]);
 
-    const firstJobs = jobs.slice(0, 4);
-
-
-    // enum jobs {
-    //   Salarie = "Salarié",
-    //   Cadre="Cadre",
-    //   Etudiant="Etudiant",
-    //   Sans_profession="En recherche d'emploi",
-    //   Fonctionnaire="Fonctionnaire",
-    //   Retraite="Retraité",
-    //   Entrepreneur="Entrepreneur",
-    //   Profession_libérale="Profession libérale",
-    //   Artisans="Artisan",
-    //   Commercant="Commerçant",
-    //   Professeur="Professeur",
-    //   Professionel_du_spectacle="Professionel du spectacle",
-    //   Agriculteur_grande_exploitation="Agriculteur grande exploitation",
-    //   Vrp="Vrp"
-    // }
-
-    // for (let motif in jobs) {
-    //     let lul = motif.toString();
-    //     console.log(lul); // ecrit toutes les clés, à gauche dans l'enum
-    //     // console.log(lul)
-    //     console.log(jobs["Sans_profession"]); // écrit "en recherche d'emploi"
-    // }
+    const firstJobsMap = new Map<string, string>([
+        ["Salarie", "Salarié"],
+        ["Salarie_cadre", "Cadre"],
+        ["Etudiant", "Etudiant"],
+        ["Sans_profession", "En recherche d'emploi"]
+    ]);
 
     function handleSubmit(event: any) {
         event.preventDefault();
@@ -68,6 +48,21 @@ function YourJob(){
 
     function handleDisplayAllProfessions() {
         setDisplayAllProfessions(true);
+    }
+
+    function getFormControlLabel(selectedMap: Map<string, string>) {
+        const lul = [];
+        for (const entry of selectedMap.entries()) {
+            lul.push(<FormControlLabel
+                value={entry[0]}
+                control={<Radio />}
+                label={entry[1]}
+                // labelPlacement="start"
+                key={entry[0]}
+                className='formControlLabel'/>);  
+        }
+        return lul;
+
     }
 
     return(
@@ -85,33 +80,10 @@ function YourJob(){
                         value={selectedProfession}
                         onChange={handleChange}
                     >
-                   {
-                        !displayAllProfessions && firstJobs.map((job) => {
-                            return (                               
-                                <FormControlLabel
-                                value={job}
-                                control={<Radio />}
-                                label={job}
-                                // labelPlacement="start"
-                                key={job}
-                                className='formControlLabel'/>                              
-                            );
 
-                        })
-                    }
-                    {
-                        displayAllProfessions && jobs.map((job) => {
-                            return (
-                                <FormControlLabel
-                                value={job}
-                                control={<Radio />}
-                                label={job}
-                                // labelPlacement="start"
-                                key={job}
-                                className='formControlLabel'/> 
-                            );
-                        })
-                    }
+                    { !displayAllProfessions && getFormControlLabel(firstJobsMap)}
+                    { displayAllProfessions && getFormControlLabel(jobsMap)}
+
                     </RadioGroup>
                     
                     {

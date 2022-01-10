@@ -1,5 +1,4 @@
 import CarAction from "../../Interfaces/CarAction"
-import Action from "../../Interfaces/CarAction"
 import Car from "../../Interfaces/car"
 
 const setCarsBrands = (car: Car) : CarAction => {

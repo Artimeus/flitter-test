@@ -1,8 +1,9 @@
-import { Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material';
-import React, { ChangeEvent, useState } from 'react';
+import { Button, FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
+import { ChangeEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import allActions from '../../Store/Actions';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import SubmitButton from '../atoms/submit-button';
 
 function YourJob(){
 
@@ -51,17 +52,24 @@ function YourJob(){
     }
 
     function getFormControlLabel(selectedMap: Map<string, string>) {
-        const lul = [];
+        const linesArray = [];
         for (const entry of selectedMap.entries()) {
-            lul.push(<FormControlLabel
+            linesArray.push(<FormControlLabel
                 value={entry[0]}
                 control={<Radio />}
                 label={entry[1]}
                 // labelPlacement="start"
                 key={entry[0]}
-                className='formControlLabel'/>);  
+                className= {selectedProfession === entry[0] ? 'formControlLabel checkedFormControlLabel' :'formControlLabel'}
+                sx={{
+                    '& .MuiTypography-root ': {
+                        fontFamily: "Circular Std",
+                        fontSize: 18,
+                    },
+                  }}
+                />);  
         }
-        return lul;
+        return linesArray;
 
     }
 
@@ -88,12 +96,21 @@ function YourJob(){
                     
                     {
                         !displayAllProfessions &&
-                        <Button className='see-more-professions-button' onClick={() => handleDisplayAllProfessions()}>Voir plus de professions<AddCircleIcon></AddCircleIcon></Button>
+                        <Button
+                            className='see-more-professions-button'
+                            onClick={() => handleDisplayAllProfessions()}>Voir plus de professions<AddCircleIcon></AddCircleIcon>
+                            {/* sx={{
+                                '& .MuiButton-root': {
+                                    fontFamily: "Circular Std",
+                                    fontSize: 16,
+                                },
+                            }} */}
+                        </Button>
                     }
 
                 </FormControl>
                 <div className='next-button'>
-                    <Button type='submit' variant="contained" size="large">Suivant</Button>
+                    <SubmitButton label="Suivant"></SubmitButton>
                 </div>
             </form>
         </div>

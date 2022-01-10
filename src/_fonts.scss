@@ -1,4 +1,5 @@
-$font-stack: Inter, sans-serif;
+$font-stack: Circular Std, Inter, sans-serif;
+
 $G900: #010038;
 $G700: #3B3D58;
 $G600: #58596D;
@@ -7,3 +8,14 @@ $G100: #DDDDDE;
 $G50: #F6F6F6;
 
 $Ivory: #FFFAEF;
+
+
+@font-face {
+    font-family: 'Circular Std';
+    src: local('Circular Std Medium'), local('Circular-Std-Medium'),
+        url('./assets/fonts/CircularStd-Medium.woff2') format('woff2'),
+        url('./assets/fonts/CircularStd-Medium.woff') format('woff'),
+        url('./assets/fonts/CircularStd-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }

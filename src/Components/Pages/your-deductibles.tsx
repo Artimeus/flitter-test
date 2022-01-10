@@ -38,17 +38,17 @@ function YourDeductibles(){
     };
     
     useEffect(() => {
-        fetch('https://test-api-7qyau6jusq-oa.a.run.app/api/v1/quote/price', priceRequestOptions)
-        .then(result => {
-            if (result.ok) {
-                return result.json()
-            }
-            else {
-                return result.text().then(text => {throw new Error(text)})
-            }
-        })
-        .then(data => dispatch(allActions.priceValuesActions.setPriceValues({price: data.qt_price_ttc, id: data.id})))
-        .catch((error => console.log('Erreur : Prix introuvable', error))); 
+            fetch('https://test-api-7qyau6jusq-oa.a.run.app/api/v1/quote/price', priceRequestOptions)
+            .then(result => {
+                if (result.ok) {
+                    return result.json()
+                }
+                else {
+                    return result.text().then(text => {throw new Error(text)})
+                }
+            })
+            .then(data => dispatch(allActions.priceValuesActions.setPriceValues({price: data.qt_price_ttc, id: data.id})))
+            .catch((error => console.log('Erreur : Prix introuvable', error))); 
     }, []);
 
     function handleAccident(event: any) {

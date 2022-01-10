@@ -22,7 +22,7 @@ function Header(props: any) {
             {
                 formStep !== 1 &&
                 <div className='go-to-previous-step'>
-                    <Button onClick={() => handleGoBackClick()}><KeyboardBackspaceIcon/>Retour</Button>
+                    <Button onClick={() => handleGoBackClick()} className='go-to-previous-step-button'><KeyboardBackspaceIcon/>Retour</Button>
                 </div>
             }
             

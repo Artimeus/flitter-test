@@ -6,6 +6,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import { AccountCircle } from '@mui/icons-material';
 import { useDispatch } from 'react-redux';
 import allActions from '../../Store/Actions';
+import SubmitButton from '../atoms/submit-button';
 
 function LastThing(){
 
@@ -76,21 +77,15 @@ function LastThing(){
                 />
             </FormControl>
             </div>
-                <FormControl component="fieldset">
-                {/* <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined"> */}
-                    {/* <InputLabel htmlFor="outlined-adornment-mail">Adresse mail</InputLabel>
-                    <OutlinedInput
-                        id="outlined-adornment-mail"
-                        type='text'
-                        value={mail}
-                        onChange={handleMailChange}
-                        endAdornment={
-                        <InputAdornment position="end">
-                            <MailIcon/>
-                        </InputAdornment>
-                        }
-                        label="Mail"
-                    /> */}
+            <div>
+                <FormControl component="fieldset"
+                    sx={{
+                        '& .MuiFormControl-root': {
+                            width: "576px",
+                            fontSize: "14px"
+                        },
+                    }}
+                >
                     <TextField
                         label="Adresse mail"
                         type="text"
@@ -104,8 +99,19 @@ function LastThing(){
                             ),
                           }}
                     />
+                </FormControl>
+            </div>
 
-                    <div>
+            <FormControl component="fieldset"
+                sx={{
+                    '& .MuiTypography-root': {
+                        width: "576px",
+                        fontSize: 14
+                    },
+                }}
+            >
+
+                <div>
                     <FormControlLabel control={<Checkbox
                         checked={isReceiveQuotationSelected}
                         onChange={() => {
@@ -114,15 +120,12 @@ function LastThing(){
                         inputProps={{ 'aria-label': 'controlled' }}
                         />}
                         label="J'accepte que Flitter m'envoie mon devis et des conseils pour protéger ma voiture."
-                     />
-
-      
-               
-                    </div>
-                </FormControl>
+                    />
+                </div>
+            </FormControl>
                     
                 <div className='next-button'>
-                    <Button type='submit' variant="contained" size="large">Finaliser votre devis (pour de bon)</Button>
+                    <SubmitButton label='Finaliser votre devis (pour de bon)'></SubmitButton>
                 </div>
             </form>
         </div>

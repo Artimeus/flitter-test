@@ -27,7 +27,7 @@ code {
 
 
 .immatriculation-search {
-  font-family: Circular Std;
+  // font-family: Circular Std;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -52,7 +52,7 @@ code {
 }
 
 .title {
-  font-family: Circular Std;
+  // font-family: Circular Std;
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -99,9 +99,11 @@ code {
           border: 2px solid #DDDDDE;
           text-align: left;
           
-          & checked {
-            border: 3px solid #010039;
-          }
+        }
+        
+        .checkedFormControlLabel {
+          border: 3px solid #010039;
+          background-color: #F8FAFF;
         }
       }
     }
@@ -109,8 +111,11 @@ code {
 }
 
 .see-more-professions-button {
-  text-transform: none;
+  text-transform: none !important;
   color: fonts.$G700 !important;
+  font-family: "Circular Std" !important;
+  font-size: 16px !important;
+
   .MuiSvgIcon-root  {
     margin-left: 5px;
   }
@@ -143,6 +148,9 @@ code {
       margin-inline: 0px;
       width: 282px;
     }
+    .MuiTypography-root {
+      font-family: Circular Std !important;
+    }
   }
 }
 
@@ -168,7 +176,7 @@ code {
       text-align: left;
 
       .your-deductibles-title {
-        font-family: Circular Std;
+        // font-family: Circular Std;
         font-size: 24px;
         font-style: normal;
         font-weight: 700;
@@ -188,7 +196,7 @@ code {
         padding-bottom: 8px;
         padding-top: 18px;
 
-        font-family: Circular Std;
+        // font-family: Circular Std;
         font-size: 16px;
         font-style: normal;
         font-weight: 500;
@@ -229,7 +237,6 @@ code {
     padding-top: 32px;
     
     .your-price-title {
-      font-family: Circular Std;
       font-style: normal;
       font-weight: bold;
       font-size: 24px;
@@ -248,7 +255,6 @@ code {
       margin-bottom: 24px;
 
       .price {
-        font-family: Circular Std;
         font-style: normal;
         font-weight: bold;
         font-size: 48px;
@@ -256,7 +262,6 @@ code {
       }
   
       .per-month {
-        font-family: Circular Std;
         font-style: normal;
         font-weight: bold;
         font-size: 18px;
@@ -309,4 +314,3 @@ code {
     align-items:center;
   }
 }
-

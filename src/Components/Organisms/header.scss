@@ -11,6 +11,14 @@
         position: absolute;
         left: 100px;
         top: 30px;
+
+        .go-to-previous-step-button {
+            font-family: Circular Std !important;
+            font-size: 16px !important;
+            text-transform: none !important;
+            color: fonts.$G700 !important;
+        }
+
     }
 
     .steps {
@@ -27,4 +35,12 @@
         right: 100px;
         top: 30px;
     }
+}
+
+
+@media screen and (max-width: 1000px)
+{
+  .steps {
+    margin-top: 70px;
+  }
 }

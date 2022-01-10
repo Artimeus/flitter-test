@@ -1,7 +1,9 @@
 import { Button } from '@mui/material';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import allActions from '../../Store/Actions';
 import { RootState } from '../../Store/store';
+import SubmitButton from '../atoms/submit-button';
 import RecapList from '../molecules/recap-list';
 
 interface RecapInterface {
@@ -11,9 +13,9 @@ interface RecapInterface {
 
 function Recap(props: RecapInterface) {
 
-    const price = useSelector((state: RootState) => state.priceValues.price);
-
     const dispatch= useDispatch();
+
+    const price = useSelector((state: RootState) => state.priceValues.price);
 
     const deductiblesRequestOptions = {
         method: 'PUT',
@@ -25,7 +27,7 @@ function Recap(props: RecapInterface) {
          })
     };
 
-    function submitDeductibles(){
+    useEffect(() => {
         fetch('https://test-api-7qyau6jusq-oa.a.run.app/api/v1/quote/price', deductiblesRequestOptions)
         .then(result => {
             if (result.ok) {
@@ -37,17 +39,21 @@ function Recap(props: RecapInterface) {
         })
         .then(data => dispatch(allActions.priceValuesActions.setPriceValues({price: data.qt_price_ttc, id: data.id})))
         .catch((error => console.log('Erreur : Prix suivant franchises introuvable', error))); 
-    }
+    }, [props.selectedAccident, props.selectedGlassBreakage]);
 
     return(
         <>
             <div className='price-zone'>
                 <h2 className='your-price-title'>Votre prix estimé</h2>
                 <div className='total-price'>
-                    <div className='price'><span>{price} €</span></div><div className='per-month'><span>/mois</span></div>
+                    {
+                        price != -1 &&
+                        <div className='price'><span>{price} €</span></div>
+                    } 
+                    <div className='per-month'><span>/mois</span></div>
                 </div>
                 <RecapList></RecapList>
-                <Button type='submit' variant="contained" size="large" onClick={submitDeductibles}>Enregistrer les franchises</Button>
+                <SubmitButton label="Enregistrer les franchises"></SubmitButton>
             </div>
 
         </>

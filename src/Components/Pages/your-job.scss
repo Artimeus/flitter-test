@@ -1,0 +1,49 @@
+@use '../../fonts';
+
+.page {
+    width: 576px;
+    margin: 0 auto;
+  
+    &.your-job {
+      .MuiFormControl-root {
+        max-height: 400px;
+        max-width: 576px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 20px;
+        margin-left: 0;
+  
+        .radio-group {
+          display: flex;
+          flex-direction: column;
+          .formControlLabel {
+            width: 570px;
+            height: 60px;
+            margin-bottom: 8px;
+            margin-left: 0px;
+            border-radius: 10px;
+            
+            border: 2px solid #DDDDDE;
+            text-align: left;
+            
+          }
+          
+          .checkedFormControlLabel {
+            border: 3px solid #010039;
+            background-color: #F8FAFF;
+          }
+        }
+      }
+    }
+  }
+
+  .see-more-professions-button {
+    text-transform: none !important;
+    color: fonts.$G700 !important;
+    font-family: "Circular Std" !important;
+    font-size: 16px !important;
+  
+    .MuiSvgIcon-root  {
+      margin-left: 5px;
+    }
+  }

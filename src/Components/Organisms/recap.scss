@@ -1,0 +1,36 @@
+@use '../../fonts';
+
+.recap-list {
+    background-color: #FFFFFF;
+    border: 1px solid fonts.$G100;
+    width: 309px;
+    border-radius: 8px;
+    margin: 0 auto;
+  
+      .separation-bar {
+        margin: 0px 10px;
+        height: 1px;
+        background-color: fonts.$G50;
+        border: none;
+      }
+  }
+  
+  .recap-list-element {
+    display: flex;
+    flex-direction: row;
+    height: 64px;
+  
+    .icon {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding-inline: 22px;
+    }
+  
+    .text {
+      text-align: left;
+      padding-right: 22px;
+      display:flex;
+      align-items:center;
+    }
+  }

@@ -1,0 +1,22 @@
+@use '../../fonts';
+
+.last-thing {
+    .MuiOutlinedInput {
+    border: 1px solid fonts.$G100;
+    box-sizing: border-box;
+    border-radius: 12px;
+    }
+  
+    .form-names {
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-between;
+      .MuiFormControl-root {
+        margin-inline: 0px;
+        width: 282px;
+      }
+      .MuiTypography-root {
+        font-family: Circular Std !important;
+      }
+    }
+  }

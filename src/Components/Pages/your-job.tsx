@@ -63,7 +63,6 @@ function YourJob(){
                 value={entry[0]}
                 control={<Radio />}
                 label={entry[1]}
-                // labelPlacement="start"
                 key={entry[0]}
                 className= {selectedProfession === entry[0] ? 'formControlLabel checkedFormControlLabel' :'formControlLabel'}
                 sx={{
@@ -75,7 +74,6 @@ function YourJob(){
                 />);  
         }
         return linesArray;
-
     }
 
     return(
@@ -104,12 +102,6 @@ function YourJob(){
                         <Button
                             className='see-more-professions-button'
                             onClick={() => handleDisplayAllProfessions()}>Voir plus de professions<AddCircleIcon></AddCircleIcon>
-                            {/* sx={{
-                                '& .MuiButton-root': {
-                                    fontFamily: "Circular Std",
-                                    fontSize: 16,
-                                },
-                            }} */}
                         </Button>
                     }
 

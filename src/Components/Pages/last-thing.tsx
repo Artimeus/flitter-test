@@ -69,37 +69,35 @@ function LastThing(){
             <div className='form-names'>
             <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
                 <TextField
-                        label="Nom"
-                        type="text"
-                        variant="outlined"
-                        onChange={handleLastNameChange}
-                        value={lastName}
-                        InputProps={{
-                            endAdornment: (
-                              <InputAdornment position="start">
-                                <PersonIcon />
-                              </InputAdornment>
-                            ),
-                          }}
-                    />
+                    label="Nom"
+                    type="text"
+                    variant="outlined"
+                    onChange={handleLastNameChange}
+                    value={lastName}
+                    InputProps={{
+                        endAdornment: (
+                            <InputAdornment position="start">
+                            <PersonIcon />
+                            </InputAdornment>
+                        ),
+                        }}
+                />
             </FormControl>
 
             <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-                <InputLabel htmlFor="outlined-adornment-firstname">Prénom</InputLabel>
-                <OutlinedInput
-                    id="outlined-adornment-firstname"
-                    type='text'
-                    value={firstName}
+                <TextField
+                    label="Prénom"
+                    type="text"
+                    variant="outlined"
                     onChange={handleFirstNameChange}
-                    // error={!isFirstNameValid}
-                    // helperText={isFirstNameValid?"":"Prénom incorrect."}
-
-                    endAdornment={
-                    <InputAdornment position="end">
-                        <PersonIcon/>
-                    </InputAdornment>
-                    }
-                    label="First Name"
+                    value={firstName}
+                    InputProps={{
+                        endAdornment: (
+                            <InputAdornment position="start">
+                            <PersonIcon />
+                            </InputAdornment>
+                        ),
+                        }}
                 />
             </FormControl>
             </div>
@@ -139,7 +137,6 @@ function LastThing(){
                     },
                 }}
             >
-
                 <div>
                     <FormControlLabel control={<Checkbox
                         checked={isReceiveQuotationSelected}

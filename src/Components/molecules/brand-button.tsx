@@ -1,6 +1,4 @@
 import { Button } from '@mui/material';
-import React from 'react';
-
 
 interface BrandButtonInterface {
     brand: string,
@@ -12,7 +10,10 @@ function BrandButton(props: BrandButtonInterface) {
     const imageUrl = require(`../../assets/brands/${props.brand}.png`);
 
     return (
-        <Button className='brand-button' onClick={() => props.handleClick(props.brand)} value={props.brand}>
+        <Button className='brand-button'
+                onClick={() => props.handleClick(props.brand)}
+                title={props.brand}
+                value={props.brand}>
             <img src={imageUrl} alt={props.brand}/>
         </Button>
     );

@@ -35,7 +35,15 @@ code {
   font-weight: 700;
   letter-spacing: 0em;
   text-align: left;
-
+  text-transform: none;
+  
+  .MuiButton-root {
+      width: 400px;
+      padding-bottom: 10px !important;
+    }
+  // .MuiSvgIcon-root {
+  //   padding-top: 10px !important;
+  // }
 }
 
 
@@ -129,6 +137,12 @@ code {
     margin-top: 32px;
     color: #FFFFFF;
     position: relative;
+  }
+
+  .form-error-helper {
+    margin-top: 43px;
+    margin-left: 10px;
+    color: #d32f2f;
   }
 }
 

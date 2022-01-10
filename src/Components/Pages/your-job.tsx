@@ -8,8 +8,8 @@ import SubmitButton from '../atoms/submit-button';
 function YourJob(){
 
     const [displayAllProfessions, setDisplayAllProfessions] = useState(false);
-
     const [selectedProfession, setSelectedProfession] = useState("");
+    const [isGeneralErrorMessageDisplayed, setIsGeneralErrorMessageDisplayed] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -39,8 +39,13 @@ function YourJob(){
 
     function handleSubmit(event: any) {
         event.preventDefault();
-        dispatch(allActions.userActions.setProfession(selectedProfession));
-        dispatch(allActions.formStepsActions.goToNextStep());
+        if (selectedProfession != "") {
+            dispatch(allActions.userActions.setProfession(selectedProfession));
+            dispatch(allActions.formStepsActions.goToNextStep());
+        }
+        else {
+            setIsGeneralErrorMessageDisplayed(true);
+        }
     }
 
     function handleChange(event: ChangeEvent<HTMLInputElement>) {
@@ -111,6 +116,10 @@ function YourJob(){
                 </FormControl>
                 <div className='next-button'>
                     <SubmitButton label="Suivant"></SubmitButton>
+                    {
+                        isGeneralErrorMessageDisplayed &&
+                        <span className='form-error-helper'>Veuillez sélectionner votre profession.</span>
+                    }
                 </div>
             </form>
         </div>

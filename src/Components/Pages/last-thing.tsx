@@ -14,6 +14,12 @@ function LastThing(){
     const [lastName, setLastName] = useState("");
     const [mail, setMail] = useState("");
     const [isReceiveQuotationSelected, setIsReceiveQuotationSelected] = useState(false);
+    const [isFormAlreadySubmitted, setIsFormAlreadySubmitted] = useState(false);
+    const [isGeneralErrorMessageDisplayed, setIsGeneralErrorMessageDisplayed] = useState(false);
+    
+    const emailRegex = new RegExp('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$');
+    const isMailValid = emailRegex.test(mail);
+    const displayMailError = !isMailValid && isFormAlreadySubmitted;
 
     const dispatch = useDispatch();
     
@@ -28,15 +34,31 @@ function LastThing(){
     function handleMailChange(event: ChangeEvent<HTMLInputElement>) {
         setMail(event.target.value);
     }
+
+    function CheckFormValidity(){
+        if(firstName==="") return false;
+        if(lastName==="") return false;
+        if(!isMailValid) return false;
+        if(!isReceiveQuotationSelected) return false;
+        return true;
+    }
     
     function handleSubmit(event: any) {
         event.preventDefault();
-        dispatch(allActions.userActions.setPersonalData({
-            firstName: firstName,
-            lastName: lastName,
-            mail: mail
-        }));
-        dispatch(allActions.formStepsActions.goToNextStep());
+        setIsFormAlreadySubmitted(true);
+        const isFormFullAndValid: boolean = CheckFormValidity();
+
+        if (isFormFullAndValid){
+            dispatch(allActions.userActions.setPersonalData({
+                firstName: firstName,
+                lastName: lastName,
+                mail: mail
+            }));
+            dispatch(allActions.formStepsActions.goToNextStep());
+        }
+        else {
+            setIsGeneralErrorMessageDisplayed(true);
+        }
     }
 
     return(
@@ -46,19 +68,20 @@ function LastThing(){
             <form onSubmit={handleSubmit}>
             <div className='form-names'>
             <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-                <InputLabel htmlFor="outlined-adornment-lastname">Nom</InputLabel>
-                <OutlinedInput
-                    id="outlined-adornment-lastname"
-                    type='text'
-                    value={lastName}
-                    onChange={handleLastNameChange}
-                    endAdornment={
-                    <InputAdornment position="end">
-                        <PersonIcon/>
-                    </InputAdornment>
-                    }
-                    label="First Name"
-                />
+                <TextField
+                        label="Nom"
+                        type="text"
+                        variant="outlined"
+                        onChange={handleLastNameChange}
+                        value={lastName}
+                        InputProps={{
+                            endAdornment: (
+                              <InputAdornment position="start">
+                                <PersonIcon />
+                              </InputAdornment>
+                            ),
+                          }}
+                    />
             </FormControl>
 
             <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
@@ -68,6 +91,9 @@ function LastThing(){
                     type='text'
                     value={firstName}
                     onChange={handleFirstNameChange}
+                    // error={!isFirstNameValid}
+                    // helperText={isFirstNameValid?"":"Prénom incorrect."}
+
                     endAdornment={
                     <InputAdornment position="end">
                         <PersonIcon/>
@@ -91,6 +117,9 @@ function LastThing(){
                         type="text"
                         variant="outlined"
                         onChange={handleMailChange}
+                        value={mail}
+                        error={displayMailError}
+                        helperText={!displayMailError?"":"Adresse mail incorrecte."}
                         InputProps={{
                             endAdornment: (
                               <InputAdornment position="start">
@@ -126,6 +155,10 @@ function LastThing(){
                     
                 <div className='next-button'>
                     <SubmitButton label='Finaliser votre devis (pour de bon)'></SubmitButton>
+                    {
+                        isGeneralErrorMessageDisplayed &&
+                        <span className='form-error-helper'>Tous les champs sont obligatoires</span>
+                    }
                 </div>
             </form>
         </div>

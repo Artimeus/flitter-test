@@ -1,9 +1,15 @@
+@use '../../fonts';
+
 .your-car .immatriculation-search .MuiButton-root {
     text-transform: none;
-    width: 241px;
+    width: 280px;
     height: 28px;
     border-radius: 4px;
     padding: 0px, 6px, 0px, 6px;
+    padding-left: 0px !important;
+    padding-top: 10px;
+    padding-right: 0px;
+    margin-left: 0;
 
     font-size: 14px;
     font-style: normal;
@@ -11,4 +17,15 @@
     line-height: 14px;
     letter-spacing: 0em;
     text-align: left;
+
+    background: fonts.$G50;
+    border-radius: 4px;
+
+    .MuiButton-startIcon {
+        margin-left: -30px;
+    }
+}
+
+.your-car .form-error-helper {
+    color: #d32f2f;
 }

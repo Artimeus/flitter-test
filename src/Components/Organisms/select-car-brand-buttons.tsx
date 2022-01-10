@@ -1,15 +1,4 @@
-import React from 'react';
 import BrandButton from '../molecules/brand-button';
-
-// import Peugeot from '../../assets/brands/PEUGEOT.png';
-// import Renault from '../../assets/brands/RENAULT.png';
-// import Renault from '../../assets/brands/RENAULT.png';
-// import Renault from '../../assets/brands/RENAULT.png';
-// import Renault from '../../assets/brands/RENAULT.png';
-// import Renault from '../../assets/brands/RENAULT.png';
-// import Renault from '../../assets/brands/RENAULT.png';
-// import Renault from '../../assets/brands/RENAULT.png';
-// import Renault from '../../assets/brands/RENAULT.png';
 
 interface SelectCarBrandButtonsInterface {
     handleClick: (event: string) => void,

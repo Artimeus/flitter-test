@@ -1,16 +1,9 @@
-import React from 'react';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled';
 import GppGoodIcon from '@mui/icons-material/GppGood';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../Store/store';
 import RecapListElement from '../atoms/recap-list-element';
-
-
-// profession: "",
-// firstName: "",
-// lastName: "",
-// mail: ""
+import { RootState } from '../../Store/store';
+import { useSelector } from 'react-redux';
 
 function RecapList() {
 

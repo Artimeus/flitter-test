@@ -1,9 +1,7 @@
-import { Box, Button, Checkbox, FormControl, FormControlLabel, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField, ToggleButton } from '@mui/material';
-import React, { ChangeEvent, useState } from 'react';
+import { Checkbox, FormControl, FormControlLabel, InputAdornment, TextField } from '@mui/material';
+import { ChangeEvent, useState } from 'react';
 import PersonIcon from '@mui/icons-material/Person';
 import MailIcon from '@mui/icons-material/Mail';
-import CheckIcon from '@mui/icons-material/Check';
-import { AccountCircle } from '@mui/icons-material';
 import { useDispatch } from 'react-redux';
 import allActions from '../../Store/Actions';
 import SubmitButton from '../atoms/submit-button';

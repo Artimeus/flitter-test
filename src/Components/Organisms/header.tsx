@@ -6,9 +6,11 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { useDispatch } from 'react-redux';
 import allActions from '../../Store/Actions';
 
-// customiser les steptitle en fonction que le header est appelé depuis un composant voiture ou le composant formule
+interface HeaderInterface {
+    formStep: number
+}
 
-function Header(props: any) {
+function Header(props: HeaderInterface) {
 
     const formStep = props.formStep;
     const dispatch = useDispatch();

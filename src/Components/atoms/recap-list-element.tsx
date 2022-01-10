@@ -1,5 +1,4 @@
-import { IconProps, SvgIconProps, SvgIconTypeMap } from "@mui/material";
-import { OverridableComponent } from "@mui/material/OverridableComponent";
+import { SvgIconProps } from "@mui/material";
 
 interface RecapListElementInterface {
     icon: React.ReactElement<SvgIconProps>,

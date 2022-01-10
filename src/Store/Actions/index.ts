@@ -1,7 +1,7 @@
-import userActions from "./userActions";
-import carActions from "./carActions";
-import formStepsActions from "./formStepsActions";
-import priceValuesActions from "./priceValuesActions";
+import userActions from "./user-actions";
+import carActions from "./car-actions";
+import formStepsActions from "./form-steps-actions";
+import priceValuesActions from "./price-values-actions";
 
 const allActions = {
     carActions,

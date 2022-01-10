@@ -35,7 +35,7 @@ function LastThing(){
         setMail(event.target.value);
     }
 
-    function CheckFormValidity(){
+    function checkFormValidity(){
         if(firstName==="") return false;
         if(lastName==="") return false;
         if(!isMailValid) return false;
@@ -46,7 +46,7 @@ function LastThing(){
     function handleSubmit(event: any) {
         event.preventDefault();
         setIsFormAlreadySubmitted(true);
-        const isFormFullAndValid: boolean = CheckFormValidity();
+        const isFormFullAndValid: boolean = checkFormValidity();
 
         if (isFormFullAndValid){
             dispatch(allActions.userActions.setPersonalData({

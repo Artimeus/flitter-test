@@ -38,7 +38,12 @@ body {
     margin-top: 32px;
     color: #FFFFFF;
     position: relative;
+
+    &:hover {
+      background-color: #F45B69;
+    }
   }
+  
 
   .form-error-helper {
     margin-top: 43px;
